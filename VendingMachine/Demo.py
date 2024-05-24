@@ -1,0 +1,30 @@
+from VendingMachine import VendingMachine
+from Product import Product
+from Coin import Coin
+from Note import Note
+
+vending_machine = VendingMachine()
+coke = Product("Coke", 15)
+pepsi = Product("Pepsi", 13)
+water = Product("Water", 10)
+chips = Product("Chips", 50)
+vending_machine.inventory.add_product(coke, 5)
+vending_machine.inventory.add_product(pepsi, 3)
+vending_machine.inventory.add_product(water, 2)
+vending_machine.select_product(coke)
+vending_machine.insert_coin(Coin.FIVE)
+vending_machine.insert_coin(Coin.FIVE)
+# vending_machine.insert_coin(Coin.FIVE)
+# vending_machine.insert_coin(Coin.FIVE)
+# vending_machine.insertNote(Note.FIVE)
+vending_machine.dispense_product()
+vending_machine.return_change()
+vending_machine.select_product(pepsi)
+vending_machine.insert_coin(Coin.ONE)
+vending_machine.dispense_product()
+vending_machine.insert_coin(Coin.ONE)
+vending_machine.insert_coin(Coin.ONE)
+vending_machine.insert_coin(Coin.ONE)
+vending_machine.insert_coin(Coin.ONE)
+vending_machine.dispense_product()
+vending_machine.return_change()
