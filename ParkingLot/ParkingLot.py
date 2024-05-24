@@ -37,6 +37,7 @@ class ParkingLot:
 
 
 #Testing singleton design in multi-threaded environment
+#Won't truly multithread because of GIL
 
 # import threading
 # def test_function():

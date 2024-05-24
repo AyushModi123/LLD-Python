@@ -1,7 +1,7 @@
-from abc import ABC, abstractmethod
+from abc import ABC, abstractmethod, ABCMeta
 from VehicleType import VehicleType
 
-class Vehicle:
+class Vehicle(metaclass=ABCMeta):
     def __init__(self, type: VehicleType, license_plate: str) -> None:
         self._type = type
         self._license_plate = license_plate
