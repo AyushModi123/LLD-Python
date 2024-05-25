@@ -28,6 +28,7 @@ class ReturnChangeState(VendingMachineState):
         product = self.vending_machine.get_selected_product()
         change = self.vending_machine.get_total_payment() - product.get_price()
         if change > 0:
+            #Keep the change
             print("Change Returned: ", change)
         else:
             print("No change to return")
