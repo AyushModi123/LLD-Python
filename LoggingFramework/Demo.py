@@ -18,3 +18,7 @@ print(logger.get_log_level())
 print(logger.get_log_appender())
 
 logger.log("ERROR!")
+
+logger.set_file_path("temp/log.txt")
+
+logger.error("ERROR")

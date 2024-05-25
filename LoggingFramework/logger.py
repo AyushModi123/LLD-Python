@@ -2,6 +2,7 @@ from log_level import LogLevel
 from log_appender import LogAppender
 from log_message import LogMessage
 from console_appender import ConsoleAppender
+from file_appender import FileAppender
 
 class Logger:
     _instance = None
@@ -27,6 +28,12 @@ class Logger:
 
     def get_log_level(self):
         return self._log_message.get_log_level()
+    
+    def set_file_path(self, filepath: str):
+        if isinstance(self._log_appender, FileAppender):
+            self._log_appender.set_filepath(filepath)
+        else:
+            self.error("Filepath can only be set in FileAppender")
     
     def debug(self, msg: str):
         self._log_appender.append(self._log_message.create_message(msg, LogLevel.DEBUG))
